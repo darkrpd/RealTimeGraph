@@ -1,0 +1,21 @@
+C:\Users\serkann\Desktop\simpleperfchart_src\SpPerfChart\bin\Debug\SpPerfChart.dll
+C:\Users\serkann\Desktop\simpleperfchart_src\SpPerfChart\bin\Debug\SpPerfChart.pdb
+C:\Users\serkann\Desktop\simpleperfchart_src\SpPerfChart\obj\Debug\SpPerfChart.csprojResolveAssemblyReference.cache
+C:\Users\serkann\Desktop\simpleperfchart_src\SpPerfChart\obj\Debug\SpPerfChart.PerfChart.resources
+C:\Users\serkann\Desktop\simpleperfchart_src\SpPerfChart\obj\Debug\SpPerfChart.csproj.GenerateResource.Cache
+C:\Users\serkann\Desktop\simpleperfchart_src\SpPerfChart\obj\Debug\SpPerfChart.dll
+C:\Users\serkann\Desktop\simpleperfchart_src\SpPerfChart\obj\Debug\SpPerfChart.pdb
+F:\c#\c# plc\simpleperfchart_src\SpPerfChart\bin\Debug\SpPerfChart.dll
+F:\c#\c# plc\simpleperfchart_src\SpPerfChart\bin\Debug\SpPerfChart.pdb
+F:\c#\c# plc\simpleperfchart_src\SpPerfChart\obj\Debug\SpPerfChart.csprojResolveAssemblyReference.cache
+F:\c#\c# plc\simpleperfchart_src\SpPerfChart\obj\Debug\SpPerfChart.PerfChart.resources
+F:\c#\c# plc\simpleperfchart_src\SpPerfChart\obj\Debug\SpPerfChart.csproj.GenerateResource.Cache
+F:\c#\c# plc\simpleperfchart_src\SpPerfChart\obj\Debug\SpPerfChart.dll
+F:\c#\c# plc\simpleperfchart_src\SpPerfChart\obj\Debug\SpPerfChart.pdb
+C:\Users\rpd\Desktop\simpleperfchart_src\SpPerfChart\bin\Debug\SpPerfChart.dll
+C:\Users\rpd\Desktop\simpleperfchart_src\SpPerfChart\bin\Debug\SpPerfChart.pdb
+C:\Users\rpd\Desktop\simpleperfchart_src\SpPerfChart\obj\Debug\SpPerfChart.csprojResolveAssemblyReference.cache
+C:\Users\rpd\Desktop\simpleperfchart_src\SpPerfChart\obj\Debug\SpPerfChart.PerfChart.resources
+C:\Users\rpd\Desktop\simpleperfchart_src\SpPerfChart\obj\Debug\SpPerfChart.csproj.GenerateResource.Cache
+C:\Users\rpd\Desktop\simpleperfchart_src\SpPerfChart\obj\Debug\SpPerfChart.dll
+C:\Users\rpd\Desktop\simpleperfchart_src\SpPerfChart\obj\Debug\SpPerfChart.pdb
