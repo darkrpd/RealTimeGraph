@@ -14,8 +14,8 @@ namespace SimplePerfChart
         private object valueGenSync = new object();
         private Random randGen = new Random();
 
-        private int valueGenFrom = 0;
-        private int valueGenTo = 100;
+        private int valueGenFrom = 200;
+        private int valueGenTo = 1000;
         private int valueGenTimerFrom = 100;
         private int valueGenTimerTo = 125;
         
@@ -26,7 +26,7 @@ namespace SimplePerfChart
 
             
             // Apply default Properties
-            perfChart.TimerInterval = 200;
+            perfChart.TimerInterval = 16;
 
             
         }
@@ -40,20 +40,22 @@ namespace SimplePerfChart
         }
 
         private void RunTimer() {
-            int waitFor = randGen.Next(valueGenTimerFrom, valueGenTimerTo);
+            int waitFor = randGen.Next(valueGenTimerFrom, valueGenTimerTo);////?????????????????///////
             bgWrkTimer.RunWorkerAsync(waitFor);
         }
 
         private void bgWrkTimer_DoWork(object sender, DoWorkEventArgs e) {
             Thread.Sleep(Convert.ToInt32(e.Argument));
+            
         }
         /// ///////////////////////////////////////////////////////////////////////////////////////////////////////
         private void bgWrkTimer_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e) {
-            int genValue = randGen.Next(valueGenFrom, valueGenTo);
+            float genValue = randGen.Next(valueGenFrom, valueGenTo);
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////
             perfChart.AddValue(genValue);
 
-            if (chkBxTimerEnabled.Checked) {
+            if (chkBxTimerEnabled.Checked)
+            {
                 //Simply restart, if still enabled
                 RunTimer();
             }

@@ -88,7 +88,7 @@ namespace SpPerfChart
         // List of stored values
         private List<decimal> drawValues = new List<decimal>(MAX_VALUE_COUNT);
         // Value queue for Timer Modes
-        private Queue<decimal> waitingValues = new Queue<decimal>();
+        private Queue<float> waitingValues = new Queue<float>();
         // Style and Design
         private PerfChartStyle perfChartStyle;
 
@@ -190,8 +190,8 @@ namespace SpPerfChart
         /// Adds a value to the Chart Line
         /// </summary>
         /// <param name="value">progress value</param>
-        public void AddValue(decimal value) {
-            if (scaleMode == ScaleMode.Absolute && value > 100M)
+        public void AddValue(float value) {
+            if (scaleMode == ScaleMode.Absolute && (int)value > 100M)
                 throw new Exception(String.Format("Values greater then 100 not allowed in ScaleMode: Absolute ({0})", value));
 
 
@@ -220,7 +220,7 @@ namespace SpPerfChart
         /// Add value to the queue for a timed refresh
         /// </summary>
         /// <param name="value"></param>
-        private void AddValueToQueue(decimal value) {
+        private void AddValueToQueue(float value) {
             waitingValues.Enqueue(value);
         }
 
@@ -229,9 +229,9 @@ namespace SpPerfChart
         /// Appends value <paramref name="value"/> to the chart (without redrawing)
         /// </summary>
         /// <param name="value">performance value</param>
-        private void ChartAppend(decimal value) {
+        private void ChartAppend(float value) {
             // Insert at first position; Negative values are flatten to 0 (zero)
-            drawValues.Insert(0, Math.Max(value, 0));
+            drawValues.Insert(0, (int)value); /////////////////////////////////////////////////////////??????????????????????????????????
 
             // Remove last item if maximum value count is reached
             if (drawValues.Count > MAX_VALUE_COUNT)
@@ -252,12 +252,12 @@ namespace SpPerfChart
             if (waitingValues.Count > 0) {
                 if (timerMode == TimerMode.Simple) {
                     while (waitingValues.Count > 0)
-                        ChartAppend(waitingValues.Dequeue());
+                        ChartAppend((float)waitingValues.Dequeue());
                 }
                 else if (timerMode == TimerMode.SynchronizedAverage ||
                          timerMode == TimerMode.SynchronizedSum) {
                     // appendValue variable is used for calculating the average or sum value
-                    decimal appendValue = Decimal.Zero;
+                    float appendValue = (float)Decimal.Zero;
                     int valueCount = waitingValues.Count;
 
                     while (waitingValues.Count > 0)
@@ -265,15 +265,15 @@ namespace SpPerfChart
 
                     // Calculate Average value in SynchronizedAverage Mode
                     if (timerMode == TimerMode.SynchronizedAverage)
-                        appendValue = appendValue / (decimal)valueCount;
+                        appendValue = appendValue / (float)valueCount;
 
                     // Finally append the value
-                    ChartAppend(appendValue);
+                    ChartAppend((float)appendValue);
                 }
             }
             else {
                 // Always add 0 (Zero) if there are no values in the queue
-                ChartAppend(Decimal.Zero);
+                ChartAppend((float)Decimal.Zero);
             }
 
             // Refresh the Chart

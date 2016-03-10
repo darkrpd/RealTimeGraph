@@ -62,6 +62,7 @@
             // perfChart
             // 
             this.perfChart.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
+            this.perfChart.BorderStyle = System.Windows.Forms.Border3DStyle.Flat;
             this.perfChart.Dock = System.Windows.Forms.DockStyle.Fill;
             this.perfChart.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World);
             this.perfChart.Location = new System.Drawing.Point(8, 22);
